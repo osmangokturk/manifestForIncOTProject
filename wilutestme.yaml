@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wil
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: wil
+  template:
+    metadata:
+      labels:
+        app: wil
+    spec:
+      containers:
+        - name: wil
+          image: nginxdemos/hello:0.4-plain-text
+          ports:
+            - containerPort: 80
